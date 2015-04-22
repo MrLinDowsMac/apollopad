@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--ApolloPad: an open source drum pad that allows you to make music with
+    real space sounds directly from your browser.
+
+    GNU Library or 'Lesser' General Public License version 3.0 (LGPL-3.0)   
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/favicon.png">
+    <title>ApolloPad</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/sound.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/text.js"></script>
+    <script type="text/javascript" src="js/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="js/hello.all.js"></script>
+  </head>
+  <body>
+    <div class="challenge">
+      <a href="https://2015.spaceappschallenge.org/project/apollopad/" alt="International SpaceApps Challenge 2015">
+        <img style="position: absolute; top: 5px; right: 5px; border: 0" src="img/spaceapps.jpg">
+      </a>
+    </div>
+    <div id="logo" class="textglow" style="position:fixed;top:15px;left:15px;">ApolloPad</div>
+    <!-- 1st column -->
+    <div class="fill">
+      <div id="loopDivA" class="square drumbeats" onclick="playLoop(this, 'audio/techclap.ogg'); toggleClassA(); textInfo('(Q)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/drum01.ogg'); textInfo('(A)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/snare.ogg'); textInfo('(Z)')">
+      </div>
+      <div id="loopDivB" class="square nasabut" onclick="playSound(this, 'audio/emfisis.ogg'); textInfo('EMFISIS')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/enceladus.ogg'); textInfo('Enceladus')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/geardrop.ogg'); textInfo('Gear drop')">
+      </div>
+    </div>
+    <!-- 2nd column -->
+    <div class="fill">
+      <div class="square drumbeats" onclick="playSound(this, 'audio/crash.ogg'); textInfo('(W)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/kick.ogg');textInfo('(S)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/sechat.ogg');textInfo('(X)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/interstellar.ogg'); textInfo('Interstellar')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/jupiter_lighting.ogg'); textInfo('Jupiter Lighting')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/keplerb.ogg'); textInfo('Kepler-22b')">
+      </div>
+    </div>
+    <!-- 3rd column -->
+    <div class="fill">
+      <div id="loopDivC" class="square drumbeats" onclick="playLoop(this, 'audio/athkl.ogg'); toggleClassC(); textInfo('(E)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/drum02.ogg');textInfo('(D)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/behat.ogg');textInfo('(C)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/keplerc.ogg'); textInfo('Kepler-10c')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/launch.ogg'); textInfo('Launch')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/neptune.ogg'); textInfo('Neptunes sounds')">
+      </div>
+    </div>
+        <!-- 4th column -->
+    <div class="fill">
+      <div id="loopDivD" class="square drumbeats" onclick="playLoop(this, 'audio/lathk.ogg'); toggleClassD(); textInfo('(R)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/hihat.ogg');textInfo('(F)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/hats.ogg');textInfo('(V)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/proton.ogg'); textInfo('Proton-induced noise in digicons')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/saturn_spooky.ogg'); textInfo('Eerie Sounds of Saturns Radio Emissions')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/saturn_waves.ogg'); textInfo('Saturns Bow Shock')">
+      </div>
+    </div>
+        <!-- 5th column -->
+    <div class="fill">
+      <div id="loopDivE" class="square drumbeats" onclick="playLoop(this, 'audio/percussion.ogg'); toggleClassE(); textInfo('(T)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/guitar01.ogg');textInfo('(G)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/guitar02.ogg');textInfo('(B)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/saturnbg.ogg'); textInfo('Saturn radio emissions')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/sputnik.ogg'); textInfo('Sputnik-1 Telemetry Signal')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/stardust.ogg'); textInfo('Stardust (Tempel)')">
+      </div>
+    </div>
+        <!-- 6th column -->
+    <div class="fill">
+      <div id="loopDivF" class="square drumbeats" onclick="playLoop(this, 'audio/percussionloop.ogg'); toggleClassF(); textInfo('(Y)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/anillogic.ogg');textInfo('(H)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/bigbeat.ogg');textInfo('(N)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/vger.ogg'); textInfo('Voyager')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/volcanoes.ogg'); textInfo('Volcanoes, Earthquake, Thunder')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/count.ogg'); textInfo('Rocket Launch Countdown')">
+      </div>
+    </div>
+        <!-- 7th column -->
+    <div class="fill">
+      <div id="loopDivG" class="square drumbeats" onclick="playLoop(this, 'audio/bass.ogg'); toggleClassG(); textInfo('(U)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/decoy.ogg');textInfo('(J)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/detune.ogg');textInfo('(M)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/guaymas.ogg'); textInfo('Hola, amigos de Guaymas')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/eagle.ogg'); textInfo('The Eagle has landed')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/apollo8christmas.ogg'); textInfo('Apollo 8: Christmas at the Moon')">
+      </div>
+    </div>
+        <!-- 8th column -->
+    <div class="fill">
+      <div id="loopDivH" class="square drumbeats" onclick="playLoop(this, 'audio/customcm.ogg'); toggleClassH(); textInfo('(I)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/padloop.ogg');textInfo('(K)')">
+      </div>
+      <div class="square drumbeats" onclick="playSound(this, 'audio/padloops.ogg');textInfo('(,)')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/smallstep.ogg'); textInfo('...One giant leap for mankind')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/jfkwechoose.ogg'); textInfo('JFK: Landing a man on the Moon')">
+      </div>
+      <div class="square nasabut" onclick="playSound(this, 'audio/jfkwechoose.ogg'); textInfo('JFK: We choose to go to the Moon')">
+      </div>
+    </div>
+
+    <!-- TO BE IMPLEMENTED: Knob controls to regule sound effects and filters -->
+<!--    <div class="knobBar">
+      <input id="filterQ" class="knob"
+        data-angleOffset=-125
+        data-angleArc=250
+        data-bgColor="#262626"
+        data-fgColor="#00ff00"
+        data-rotation="clockwise"
+        value="0"
+        data-min="0"
+        data-max="100"
+        data-lineCap="round"
+        data-displayPrevious="true"
+        data-width="10%"
+        data-font="Advanced LED Board-7">
+    <input id="filterF" class="knob"
+        data-angleOffset=-125
+        data-angleArc=250
+        data-bgColor="#262626"
+        data-fgColor="#00ff00"
+        data-rotation="clockwise"
+        value="0"
+        data-min="0"
+        data-max="100"
+        data-lineCap="round"
+        data-displayPrevious="true"
+        data-width="10%"
+        data-font="Advanced LED Board-7"
+        onchange="">
+    </div> -->
+
+    <!-- TO BE IMPLEMENTED: Record audio and save/export it to social networks -->
+    <div id="fbShare">
+      <div id="output"></div>
+      <input type="button" id="fbLogin" class="symbol" onclick="PromptFacebookLogin();" value="&#xe027; Login" /> 
+      <input type="button" id="fbPost" class="symbol" style="display:none;" onclick="postToFeed();" value="&#xe073; Share" /> 
+      <!-- TO BE IMPLEMENTED: List music shared by friends -->
+    </div>
+    <div id="tweet">
+      <a  href="https://twitter.com/share?url=http%3A%2F%2Fgustawho.com%2Fapollopad&text=%23ApolloPad:%20make%20music%20with%20real%20space%20sounds%20%23SpaceApps" target="_blank">
+        <input type="button" class="tweet symbol"value="&#xe086; Tweet">
+      </a>
+    </div>
+    
+    <!-- TO BE IMPLEMENTED: Add a custom URL for each sound, showing specific information about its background -->
+    <!--     E.g. For the fourth sound of the first column, "emmfisis", create a custom version of this site:  -->
+    <!--                   https://www.nasa.gov/mission_pages/rbsp/news/emfisis-chorus.html                    -->
+    <div id="bottom">
+      <b id="infoBox"><a href="#" id="infoUrl" target="_blank"></a></b>
+    </div>
+  </body>
+</html>

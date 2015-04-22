@@ -6,6 +6,8 @@
 - [ ] Audio gain
 - [ ] Custom page for each sound
 - [ ] "Friend list"
+- [ ] Preload sounds and preload screen
+- [ ] User manual (tooltips)
 
 ## To fix:
 - [ ] Optimize playSound() and playLoop() functions

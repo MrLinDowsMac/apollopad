@@ -39,122 +39,122 @@
     <div id="logo" class="textglow" style="position:fixed;top:15px;left:15px;">ApolloPad</div>
     <!-- 1st column -->
     <div class="fill">
-      <div id="loopDivA" class="square drumbeats" onclick="playLoop(this, 'audio/techclap.ogg'); toggleClassA(); textInfo('(Q)')">
+      <div id="loopDivA" class="square drumbeats" onclick="toogleSound(loopButtonA,techclap, context.currentTime + .1, gain_1 ); toggleClassA(); textInfo('(Q)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/drum01.ogg'); textInfo('(A)')">
+      <div class="square drumbeats" onclick="playSound(drum01, 0, false, gain_2); textInfo('(A)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/snare.ogg'); textInfo('(Z)')">
+      <div class="square drumbeats" onclick="playSound(snare, 0, false, gain_3); textInfo('(Z)')">
       </div>
-      <div id="loopDivB" class="square nasabut" onclick="playSound(this, 'audio/emfisis.ogg'); textInfo('EMFISIS')">
+      <div id="loopDivB" class="square nasabut" onclick="toogleSound(loopButtonB,emfisis,context.currentTime +.1, gain_4); toogleClassB(); textInfo('EMFISIS')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/enceladus.ogg'); textInfo('Enceladus')">
+      <div class="square nasabut" onclick="playSound(enceladus, 0, false, gain_5); textInfo('Enceladus')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/geardrop.ogg'); textInfo('Gear drop')">
+      <div class="square nasabut" onclick="playSound(geardrop, 0, false, gain_6); textInfo('Gear drop')">
       </div>
     </div>
     <!-- 2nd column -->
     <div class="fill">
-      <div class="square drumbeats" onclick="playSound(this, 'audio/crash.ogg'); textInfo('(W)')">
+      <div class="square drumbeats" onclick="playSound(crash, 0, false, gain_1); textInfo('(W)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/kick.ogg');textInfo('(S)')">
+      <div class="square drumbeats" onclick="playSound(kick, 0, false, gain_2);textInfo('(S)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/sechat.ogg');textInfo('(X)')">
+      <div class="square drumbeats" onclick="playSound(sechat, 0, false, gain_3);textInfo('(X)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/interstellar.ogg'); textInfo('Interstellar')">
+      <div class="square nasabut" onclick="playSound(interstellar, 0, false, gain_4); textInfo('Interstellar')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/jupiter_lighting.ogg'); textInfo('Jupiter Lighting')">
+      <div class="square nasabut" onclick="playSound(jupiter_lighting, 0, false, gain_5); textInfo('Jupiter Lighting')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/keplerb.ogg'); textInfo('Kepler-22b')">
+      <div class="square nasabut" onclick="playSound(keplerb, 0, false, gain_6); textInfo('Kepler-22b')">
       </div>
     </div>
     <!-- 3rd column -->
     <div class="fill">
-      <div id="loopDivC" class="square drumbeats" onclick="playLoop(this, 'audio/athkl.ogg'); toggleClassC(); textInfo('(E)')">
+      <div id="loopDivC" class="square drumbeats" onclick="toogleSound(loopButtonC, athkl, context.currenTime + .1, gain_1); toggleClassC(); textInfo('(E)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/drum02.ogg');textInfo('(D)')">
+      <div class="square drumbeats" onclick="playSound(drum02, 0, false, gain_2);textInfo('(D)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/behat.ogg');textInfo('(C)')">
+      <div class="square drumbeats" onclick="playSound(behat,0, false, gain_3);textInfo('(C)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/keplerc.ogg'); textInfo('Kepler-10c')">
+      <div class="square nasabut" onclick="playSound(keplerc,0, false, gain_4); textInfo('Kepler-10c')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/launch.ogg'); textInfo('Launch')">
+      <div class="square nasabut" onclick="playSound(launch,0, false, gain_5); textInfo('Launch')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/neptune.ogg'); textInfo('Neptunes sounds')">
+      <div class="square nasabut" onclick="playSound(neptune,0, false, gain_6); textInfo('Neptunes sounds')">
       </div>
     </div>
         <!-- 4th column -->
     <div class="fill">
-      <div id="loopDivD" class="square drumbeats" onclick="playLoop(this, 'audio/lathk.ogg'); toggleClassD(); textInfo('(R)')">
+      <div id="loopDivD" class="square drumbeats" onclick="toogleSound(loopButtonD, lathk, context.currentTime + .1, gain_1); toggleClassD(); textInfo('(R)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/hihat.ogg');textInfo('(F)')">
+      <div class="square drumbeats" onclick="playSound(hihat,0,false,gain_2);textInfo('(F)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/hats.ogg');textInfo('(V)')">
+      <div class="square drumbeats" onclick="playSound(hats,0,false,gain_3);textInfo('(V)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/proton.ogg'); textInfo('Proton-induced noise in digicons')">
+      <div class="square nasabut" onclick="playSound(proton,0,false,gain_4); textInfo('Proton-induced noise in digicons')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/saturn_spooky.ogg'); textInfo('Eerie Sounds of Saturns Radio Emissions')">
+      <div class="square nasabut" onclick="playSound(saturn_spooky,0,false,gain_5); textInfo('Eerie Sounds of Saturns Radio Emissions')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/saturn_waves.ogg'); textInfo('Saturns Bow Shock')">
+      <div class="square nasabut" onclick="playSound(saturn_waves,0,false,gain_6); textInfo('Saturns Bow Shock')">
       </div>
     </div>
         <!-- 5th column -->
     <div class="fill">
-      <div id="loopDivE" class="square drumbeats" onclick="playLoop(this, 'audio/percussion.ogg'); toggleClassE(); textInfo('(T)')">
+      <div id="loopDivE" class="square drumbeats" onclick="toogleSound(loopButtonE, percussion, context.currentTime + .1, gain_1); toggleClassE(); textInfo('(T)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/guitar01.ogg');textInfo('(G)')">
+      <div class="square drumbeats" onclick="playSound(guitar01,0,false,gain_2);textInfo('(G)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/guitar02.ogg');textInfo('(B)')">
+      <div class="square drumbeats" onclick="playSound(guitar02,0,false,gain_3);textInfo('(B)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/saturnbg.ogg'); textInfo('Saturn radio emissions')">
+      <div class="square nasabut" onclick="playSound(saturnbg,0,false,gain_4); textInfo('Saturn radio emissions')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/sputnik.ogg'); textInfo('Sputnik-1 Telemetry Signal')">
+      <div class="square nasabut" onclick="playSound(sputnik,0,false,gain_5); textInfo('Sputnik-1 Telemetry Signal')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/stardust.ogg'); textInfo('Stardust (Tempel)')">
+      <div class="square nasabut" onclick="playSound(stardust, 0,false, gain_6); textInfo('Stardust (Tempel)')">
       </div>
     </div>
         <!-- 6th column -->
     <div class="fill">
-      <div id="loopDivF" class="square drumbeats" onclick="playLoop(this, 'audio/percussionloop.ogg'); toggleClassF(); textInfo('(Y)')">
+      <div id="loopDivF" class="square drumbeats" onclick="toogleSound(loopButtonF, percussionloop, context.currentTime + .1, gain_1); toggleClassF(); textInfo('(Y)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/anillogic.ogg');textInfo('(H)')">
+      <div class="square drumbeats" onclick="playSound(anillogic,0,false,gain_2);textInfo('(H)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/bigbeat.ogg');textInfo('(N)')">
+      <div class="square drumbeats" onclick="playSound(bigbeat,0,false,gain_3);textInfo('(N)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/vger.ogg'); textInfo('Voyager')">
+      <div class="square nasabut" onclick="playSound(vger,0,false,gain_4); textInfo('Voyager')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/volcanoes.ogg'); textInfo('Volcanoes, Earthquake, Thunder')">
+      <div class="square nasabut" onclick="playSound(volcanoes,0,false,gain_5); textInfo('Volcanoes, Earthquake, Thunder')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/count.ogg'); textInfo('Rocket Launch Countdown')">
+      <div class="square nasabut" onclick="playSound(count,0,false,gain_6); textInfo('Rocket Launch Countdown')">
       </div>
     </div>
         <!-- 7th column -->
     <div class="fill">
-      <div id="loopDivG" class="square drumbeats" onclick="playLoop(this, 'audio/bass.ogg'); toggleClassG(); textInfo('(U)')">
+      <div id="loopDivG" class="square drumbeats" onclick="toogleSound(loopButtonG, bass, context.currentTime + .1, gain_1); toggleClassG(); textInfo('(U)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/decoy.ogg');textInfo('(J)')">
+      <div class="square drumbeats" onclick="playSound(decoy,0,false,gain_2);textInfo('(J)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/detune.ogg');textInfo('(M)')">
+      <div class="square drumbeats" onclick="playSound(detune,0,false,gain_3);textInfo('(M)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/guaymas.ogg'); textInfo('Hola, amigos de Guaymas')">
+      <div class="square nasabut" onclick="playSound(guaymas,0,false,gain_4); textInfo('Hola, amigos de Guaymas')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/eagle.ogg'); textInfo('The Eagle has landed')">
+      <div class="square nasabut" onclick="playSound(eagle,0,false,gain_5); textInfo('The Eagle has landed')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/apollo8christmas.ogg'); textInfo('Apollo 8: Christmas at the Moon')">
+      <div class="square nasabut" onclick="playSound(apollo8christmas,0,false,gain_6); textInfo('Apollo 8: Christmas at the Moon')">
       </div>
     </div>
         <!-- 8th column -->
     <div class="fill">
-      <div id="loopDivH" class="square drumbeats" onclick="playLoop(this, 'audio/customcm.ogg'); toggleClassH(); textInfo('(I)')">
+      <div id="loopDivH" class="square drumbeats" onclick="toogleSound(loopButtonH, customcm, context.currentTime + .1, gain_1); toggleClassH(); textInfo('(I)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/padloop.ogg');textInfo('(K)')">
+      <div class="square drumbeats" onclick="playSound(padloop,0,false,gain_2);textInfo('(K)')">
       </div>
-      <div class="square drumbeats" onclick="playSound(this, 'audio/padloops.ogg');textInfo('(,)')">
+      <div class="square drumbeats" onclick="playSound(padloops,0,false,gain_3);textInfo('(,)')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/smallstep.ogg'); textInfo('...One giant leap for mankind')">
+      <div class="square nasabut" onclick="playSound(smallstep,0,false,gain_4); textInfo('...One giant leap for mankind')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/jfkmoon.ogg'); textInfo('JFK: Landing a man on the Moon')">
+      <div class="square nasabut" onclick="playSound(jfkmoon,0,false,gain_5); textInfo('JFK: Landing a man on the Moon')">
       </div>
-      <div class="square nasabut" onclick="playSound(this, 'audio/jfkwechoose.ogg'); textInfo('JFK: We choose to go to the Moon')">
+      <div class="square nasabut" onclick="playSound(jfkwechoose,0,false,gain_6); textInfo('JFK: We choose to go to the Moon')">
       </div>
     </div>
 

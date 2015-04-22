@@ -73,16 +73,27 @@ $(function($) {
   });
 });
 
+var loopButtonA = false;
+var loopButtonB = false;
+var loopButtonC = false;
+var loopButtonD = false;
+var loopButtonE = false;
+var loopButtonF = false;
+var loopButtonG = false;
+var loopButtonH = false;
+
 /* --- Toggle on/off the "LEDS" --- */
 function toggleClassA(){
   var NAME = document.getElementById("loopDivA");
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonA = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonA = true;
   }
 }
 
@@ -91,10 +102,12 @@ function toggleClassB(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonB = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonB = true;
   }
 }
 
@@ -103,10 +116,12 @@ function toggleClassC(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonC = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonC = true;
   }
 }
 
@@ -115,10 +130,12 @@ function toggleClassD(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonD = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonD = true;
   }
 }
 
@@ -127,10 +144,12 @@ function toggleClassE(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonE = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonE = true;
   }
 }
 
@@ -139,10 +158,12 @@ function toggleClassF(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonF = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonF = true;
   }
 }
 
@@ -151,10 +172,12 @@ function toggleClassG(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonG = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonG = true;
   }
 }
 
@@ -163,9 +186,11 @@ function toggleClassH(){
   if (NAME.className==="square lightsOnA")
   {
     NAME.className="square drumbeats";
+    loopButtonH = false;
   }
   else
   {
     NAME.className="square lightsOnA";
+    loopButtonH = true;
   }
 }

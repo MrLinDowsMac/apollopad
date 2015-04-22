@@ -166,6 +166,7 @@ function finishedLoading(bufferList) {
 
 }
 
+
 //Plays a sound, parametres are: 
 //soundObject that contains the audio buffer
 //time when it will be sound
@@ -188,6 +189,55 @@ function stopSound(soundObject, time) {
     soundObject.runningNode.stop();
     //soundObject.runningNode = null;
 }
+
+function loopisPlaying( loopButton ){
+   if (loopButton == true){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+function toogleSound(loopButton, soundObject, time, gain_node){
+  if (loopisPlaying(loopButton) == false) {
+    playSound(soundObject, time, loopOption = true, gain_node );
+  }
+  else {
+    stopSound(soundObject, time);
+  }
+}
+
+/* --- Loop sounds --- */
+/*function playLoop(el,soundfile) {
+  if (el.mp3) {
+  if(el.mp3.paused){
+    el.mp3.currentTime = 0;
+    el.mp3.play();
+  } else el.mp3.pause();
+    } else {
+      el.mp3 = new Audio(soundfile);
+      el.mp3.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+      }, false);
+      el.mp3.play();
+    }
+}
+*/
+/* --- Single play/pause --- */
+/*function playSound(el,soundfile) {
+  if (el.mp3) {
+    if(el.mp3.paused){
+      el.mp3.currentTime = 0;
+      el.mp3.play();
+    } else el.mp3.pause();
+  } else {
+    el.mp3 = new Audio(soundfile);
+    el.mp3.play();
+  }
+}
+*/
 
 function PromptFacebookLogin(){
   var response;

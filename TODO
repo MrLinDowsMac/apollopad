@@ -1,0 +1,13 @@
+## To implement:
+- [ ] Filters and sound effects
+- [ ] Keyboard control
+- [ ] Audio record
+- [ ] Save locally and/or export to social networks
+- [ ] Audio gain
+- [ ] Custom page for each sound
+- [ ] "Friend list"
+
+## To fix:
+- [ ] Optimize playSound() and playLoop() functions
+- [ ] Responsiveness
+- [ ] Facebook login

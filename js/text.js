@@ -73,6 +73,7 @@ $(function($) {
   });
 });
 
+//This variables are needed to know the state of the current button (is Playing or not)
 var loopButtonA = false;
 var loopButtonB = false;
 var loopButtonC = false;
@@ -192,5 +193,46 @@ function toggleClassH(){
   {
     NAME.className="square lightsOnA";
     loopButtonH = true;
+  }
+}
+
+var current_selected = null; //Variable to know what row is selected. 
+
+//Function to select only one row selector button at time
+function toggleClassRowSelector(elementid){
+ var NAME = document.getElementById(elementid);
+  //Selected a button and was already on? Turn it off.
+  if (NAME.className==="circle lightsOnA")
+  {
+    $('.knobBar').hide(); //This hides the knobs (will be changed later)
+    NAME.className="circle drumbeats";
+    current_selected = null;
+  }
+  else //Selected a button and was off?
+  {
+    if (current_selected == null) { //Just turn it on and set as current selected.
+      NAME.className="circle lightsOnA";
+      current_selected = elementid;
+
+      //Show the knobs (This will be changed later)
+      $('.knobBar').show(); 
+
+      //Get the current values of the gain nodes and apply them to the knobs
+        $('.knob').each( function(key){  
+          $('#gain' + (key + 1) ).val( 
+            Math.floor( gains['gain_row_' + current_selected.substring(11) ][key].gain.value * 100)  ).trigger('change')  } );
+    }
+    else{ //Is there another button turned on? Turn it off and Turn it on this one.
+      selected = document.getElementById(current_selected);
+      selected.className = "circle drumbeats";
+      NAME.className="circle lightsOnA"; 
+      current_selected = elementid;
+
+      //Get the current values of the gain nodes and apply them to the knobs
+        $('.knob').each( function(key){  
+          $('#gain' + (key + 1) ).val( 
+            Math.floor( gains['gain_row_' + current_selected.substring(11) ][key].gain.value * 100)  ).trigger('change')  } );
+
+    }
   }
 }

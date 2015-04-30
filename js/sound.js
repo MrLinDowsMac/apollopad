@@ -15,8 +15,27 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
+// This makes the knobs work (along with jquery.knob.js)
+(function ($) {
+  var methods = {
+    init: function () {
+    },
+  };
+  $.fn.knob = function (method) {
+    if (methods[method]) {
+      return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    } else if (typeof method === 'object' || !method) {
+      return methods.init.apply(this, arguments);
+    } else {
+      $.error('Method ' + method + ' does not exist');
+    }
+  };
+})
+
+
 var context;
 var bufferLoader;
+var gains;
 
 window.onload = function() {
 
@@ -30,7 +49,7 @@ window.onload = function() {
         "audio/apollo8christmas.ogg", //bufferLoader.bufferList[1];
         "audio/athkl.ogg",      //bufferLoader.bufferList[2];
         "audio/bass.ogg",       //...and so on...
-        "audio/behat.ogg",
+        /*"audio/behat.ogg",
         "audio/bigbeat.ogg",
         "audio/count.ogg",
         "audio/crash.ogg",
@@ -73,7 +92,7 @@ window.onload = function() {
         "audio/stardust.ogg",
         "audio/techclap.ogg",
         "audio/vger.ogg",
-        "audio/volcanoes.ogg",
+        "audio/volcanoes.ogg", */
         ],
         finishedLoading
     );
@@ -88,33 +107,110 @@ function finishedLoading(bufferList) {
     console.log(bufferList.toString());
 
     // Create Gain Nodes
-    gain_1 = context.createGain();
+    //Row 1
+    gain_1 = context.createGain(); 
     gain_2 = context.createGain();
     gain_3 = context.createGain();
     gain_4 = context.createGain();
     gain_5 = context.createGain();
     gain_6 = context.createGain();
+    gain_7 = context.createGain();
+    gain_8 = context.createGain();
     
+    //Row 2
+    gain_9 = context.createGain(); 
+    gain_10 = context.createGain();
+    gain_11 = context.createGain();
+    gain_12 = context.createGain();
+    gain_13 = context.createGain();
+    gain_14 = context.createGain();
+    gain_15 = context.createGain();
+    gain_16 = context.createGain();
 
+    //Row 3
+    gain_17 = context.createGain(); 
+    gain_18 = context.createGain();
+    gain_19 = context.createGain();
+    gain_20 = context.createGain();
+    gain_21 = context.createGain();
+    gain_22 = context.createGain();
+    gain_23 = context.createGain();
+    gain_24 = context.createGain();
+
+    //Row 4
+    gain_25 = context.createGain(); 
+    gain_26 = context.createGain();
+    gain_27 = context.createGain();
+    gain_28 = context.createGain();
+    gain_29 = context.createGain();
+    gain_30 = context.createGain();
+    gain_31 = context.createGain();
+    gain_32 = context.createGain();
+
+    //Row 5
+    gain_33 = context.createGain(); 
+    gain_34 = context.createGain();
+    gain_35 = context.createGain();
+    gain_36 = context.createGain();
+    gain_37 = context.createGain();
+    gain_38 = context.createGain();
+    gain_39 = context.createGain();
+    gain_40 = context.createGain();
+
+    //Row 6
+    gain_41 = context.createGain();
+    gain_42 = context.createGain();
+    gain_43 = context.createGain();
+    gain_44 = context.createGain();
+    gain_45 = context.createGain();
+    gain_46 = context.createGain();
+    gain_47 = context.createGain(); 
+    gain_48 = context.createGain();
+
+    //Create object containing all gains. 
+    gains = { gain_row_1 : [gain_1,gain_2,gain_3,gain_4,gain_5,gain_6,gain_7,gain_8],
+              gain_row_2 : [gain_9,gain_10,gain_11,gain_12,gain_13,gain_14,gain_15,gain_16], 
+              gain_row_3 : [gain_17,gain_18,gain_19,gain_20,gain_21,gain_22,gain_23,gain_24],
+              gain_row_4 : [gain_25, gain_26, gain_27, gain_28, gain_29, gain_30, gain_31, gain_32],
+              gain_row_5 : [gain_33, gain_34, gain_35, gain_36, gain_37, gain_38, gain_39, gain_40],
+              gain_row_6 : [gain_41, gain_42, gain_43, gain_44, gain_45, gain_46, gain_47, gain_48] };
+
+    //Create Dynamic Range Compressor
+    //drc = context.createDynamicsCompressor();
+
+    //Delay
+    //delay = context.createDelay();
+
+
+    //Set gain to 0.8 (80%) as default value
+    gains.gain_row_1.forEach( function(g){ g.gain.value = 0.8  } );
+    gains.gain_row_2.forEach( function(g){ g.gain.value = 0.8  } );
+    gains.gain_row_3.forEach( function(g){ g.gain.value = 0.8  } );
+    gains.gain_row_4.forEach( function(g){ g.gain.value = 0.8  } );
+    gains.gain_row_5.forEach( function(g){ g.gain.value = 0.8  } );
+    gains.gain_row_6.forEach( function(g){ g.gain.value = 0.8  } );
+
+    //Set jQuery knobs
+    $('.knob') 
+        .val(80)
+        .trigger('change');
+    
     //Buses
-    //sendmain_1 = context.createGain(); // Create routing gain node for main bus for channel 1
-    main_bus = context.createGain();
+    //send_1 = context.createGain(); // Create routing gain node for main bus for channel 1
+    //gain_bus = context.createGain();
+    //master_bus = context.createGain();
+
+    //TODO: Implement buses and sends for FX
 
     //Wiring
-    gain_1.connect(main_bus);
-    gain_2.connect(main_bus);
-    gain_3.connect(main_bus);
-    gain_4.connect(main_bus);
-    gain_5.connect(main_bus);
-    gain_6.connect(main_bus);
-
-    main_bus.connect(context.destination);
+    gains.gain_row_1.forEach( function(g){ g.connect(context.destination)  } );
+    gains.gain_row_2.forEach( function(g){ g.connect(context.destination)  } );
+    gains.gain_row_3.forEach( function(g){ g.connect(context.destination)  } );
+    gains.gain_row_4.forEach( function(g){ g.connect(context.destination)  } );
+    gains.gain_row_5.forEach( function(g){ g.connect(context.destination)  } );
+    gains.gain_row_6.forEach( function(g){ g.connect(context.destination)  } );
 
     //ALL THE SOUND OBJECTS ARE REFERENCED HERE, THEY CONTAIN ITS RESPECTIVE BUFFER
-    //guitar = { name : 'guitar', buffer: bufferLoader.bufferList[0] , runningNode : null };
-    //kbeat  = { name : 'kbeat', buffer : bufferLoader.bufferList[1] , runningNode : null };
-    //tick1  = { name : 'tick1', buffer : bufferLoader.bufferList[2], runningNode : null };
-    //tick2  = { name : 'tick2', buffer : bufferLoader.bufferList[3], runningNode : null };
     anillogic = { name : 'anillogic', buffer: bufferLoader.bufferList[0] , runningNode : null };
     apollo8christmas = { name : 'apollo8christmas', buffer: bufferLoader.bufferList[1] , runningNode : null };
     athkl = { name : 'athkl', buffer: bufferLoader.bufferList[2] , runningNode : null };
@@ -163,7 +259,7 @@ function finishedLoading(bufferList) {
     techclap = { name : 'techclap', buffer: bufferLoader.bufferList[45] , runningNode : null };
     vger = { name : 'vger', buffer: bufferLoader.bufferList[46] , runningNode : null };
     volcanoes  = { name : 'volcanoes', buffer: bufferLoader.bufferList[47] , runningNode : null };
-
+    
 }
 
 
@@ -280,3 +376,45 @@ window.fbAsyncInit = function() {
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
+//Listeners for knobs
+$(function () {
+      //Knob 1
+    $('#gain1').dial({
+        'change': function (v) {
+      console.log(v);
+      //Change the value of the first gain in the selected row
+      gains['gain_row_' + current_selected.substring(11) ][0].gain.value = v / 100;
+    }});
+      //Knob 2
+    $('#gain2').dial({'change': function (v) {
+      console.log(v)
+      //Change the value of the second gain in the selected row
+      gains['gain_row_' + current_selected.substring(11) ][1].gain.value = v / 100;
+    }});
+    $('#gain3').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][2].gain.value = v / 100;
+    }});
+    $('#gain4').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][3].gain.value = v / 100;
+    }});
+    $('#gain5').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][4].gain.value = v / 100;
+    }});
+    $('#gain6').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][5].gain.value = v / 100;
+    }});
+    $('#gain7').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][6].gain.value = v / 100;
+    }});
+    $('#gain8').dial({'change': function (v) {
+      gains['gain_row_' + current_selected.substring(11) ][7].gain.value = v / 100;
+    }});
+    }) 
+
+$(document).ready(function() { 
+
+console.log('document loaded')
+
+ });
+

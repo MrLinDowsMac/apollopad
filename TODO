@@ -3,7 +3,7 @@
 - [ ] Keyboard control
 - [ ] Audio record
 - [ ] Save locally and/or export to social networks
-- [ ] Audio gain
+- [x] Audio gain
 - [ ] Custom page for each sound
 - [ ] "Friend list"
 - [ ] Preload sounds and preload screen

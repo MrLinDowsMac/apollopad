@@ -49,7 +49,7 @@ window.onload = function() {
         "audio/apollo8christmas.ogg", //bufferLoader.bufferList[1];
         "audio/athkl.ogg",      //bufferLoader.bufferList[2];
         "audio/bass.ogg",       //...and so on...
-        /*"audio/behat.ogg",
+        "audio/behat.ogg",
         "audio/bigbeat.ogg",
         "audio/count.ogg",
         "audio/crash.ogg",
@@ -92,7 +92,7 @@ window.onload = function() {
         "audio/stardust.ogg",
         "audio/techclap.ogg",
         "audio/vger.ogg",
-        "audio/volcanoes.ogg", */
+        "audio/volcanoes.ogg", 
         ],
         finishedLoading
     );
